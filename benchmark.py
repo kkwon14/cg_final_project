@@ -1,27 +1,18 @@
 import timeit  # from https://pypi.org/project/memory-profiler/
 from memory_profiler import memory_usage
 from global_alignment_functions import *
-import os
-import glob
-
-import psutil
-
-# import os
-# import psutil
-
-# process = psutil.Process(os.getpid())
-
-# process.get_ext_memory_info().peak_wset
+import os, glob, psutil
 
 
-def test_run(code):
-    exec(code)
+def test_run(codestring):
+    exec(codestring)
 
 def get_memory_use():
     pid = os.getpid()
     py = psutil.Process(pid)
     memoryUse = py.memory_info()[0]/2.**30  # memory use in GB...I think
-    memoryUse = memoryUse * 1000000000 # change to Bytes
+    memoryUse = memoryUse * 1000
+    # 1000000000 # change to Bytes
     return memoryUse
     # print('memory use:', memoryUse)
 
@@ -50,7 +41,6 @@ from global_alignment_functions import FUNCTION_TEST, get_cost
             Use replaced TEST_CODE in order to get time data with timeit package
             '''
             t = timeit.Timer(setup=SETUP_CODE, stmt=TEST_CODE)
-            # exec(TEST_CODE)
 
             # TODO: UNCOMMENT FOR MORE ACCURATE DATA
             # sec_time = t.timeit(100000)/100000  # Average time over 100,000 runs
@@ -58,21 +48,23 @@ from global_alignment_functions import FUNCTION_TEST, get_cost
 
             print(str(filename) + ": " + str(sec_time))
 
+            # mem_before = get_memory_use()
+            # exec(TEST_CODE)
+            # mem_used = get_memory_use() - mem_before
+            print(get_memory_use())
             mem_before = get_memory_use()
-            test_run(TEST_CODE)
-            mem_used = get_memory_use() - mem_before
-            print("Memory Use: " + str(mem_used))
+            mem_usage = memory_usage(test_run(TEST_CODE), interval=.1, timeout=(sec_time*1.5))
+            print(max(mem_usage))
+            ans = max(mem_usage) - mem_before
+            print(ans)
+            # print("Memory Use: " + str(mem_used))
+
+            # TODO: Alternative way to track memory use?
             # mem_usage = memory_usage(test_run(TEST_CODE), interval=.1, timeout=(sec_time*1.5))
             # print(mem_usage)
             # print(max(mem_usage))
 
 
-
-    # mem_usage = memory_usage(dp("s1", "s2", get_cost))
-    # print(max(mem_usage))
-
 if __name__ == '__main__':
     test_func_real_data("dp")
     test_func_real_data("hirschberg")
-    # mem_usage = memory_usage(test_run('dp("s1","s2", get_cost)'), interval=.1, timeout=15)
-    # print(max(mem_usage))
