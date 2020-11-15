@@ -1,4 +1,5 @@
 import random
+import os.path
 
 '''
 Function to generate a random string of ATGC n bytes long
@@ -48,17 +49,20 @@ def run_test(generated_lengths, pct, filename):
         # print(create_entropy(s1, pct))
         s1_mut = create_entropy(s1, pct)
 
-        final_filename = filename + str(value) + "long.txt"
+        final_filename = os.path.join("./", filename, filename + "_" + str(value) + "long.txt")
+        # '.\' + filename + '\' + filename + "_" + str(value) + "long.txt"
+        if not os.path.exists(os.path.dirname(final_filename)):
+            os.makedirs(os.path.dirname(final_filename))
         with open(final_filename, "w") as f:
             f.write(s1 + "\n" + s1_mut)
 
 
 if __name__ == '__main__':
-    generated_lengths = [50, 500, 1000, 2500, 5000, 10000, 100000]
+    generated_lengths = [50, 500, 1000, 2500, 5000, 10000]
 
     # 5% mutated
-    run_test(generated_lengths, 10, "10percent_")
+    run_test(generated_lengths, 10, "10percent")
     # 50% mutation
     run_test(generated_lengths, 50, "50percent")
     # 90% mutation
-    run_test(generated_lengths, 90, "90percent_")
+    run_test(generated_lengths, 90, "90percent")
