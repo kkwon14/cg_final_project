@@ -56,8 +56,10 @@ from global_alignment_functions import FUNCTION_TEST, get_cost
 
             # print(get_memory_use())
             mem_before = get_memory_use()
-            mem_usage = memory_usage(test_run(TEST_CODE), interval=.05, timeout=(sec_time*1.5 + 1))
-            net_mem_use = max(mem_usage) - mem_before
+            test_run(TEST_CODE)
+            # mem_usage = memory_usage(test_run(TEST_CODE), interval=.05, timeout=(sec_time*1.5 + 1))
+            # net_mem_use = max(mem_usage) - mem_before
+            net_mem_use = get_memory_use() - mem_before
             data[os.path.basename(filename)] = {"runtime": sec_time, "mem_use": net_mem_use, "length": length_bp}
             # print(ans)
             # print("Memory Use: " + str(mem_used))

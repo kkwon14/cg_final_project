@@ -58,7 +58,8 @@ def run_test(generated_lengths, pct, filename):
 
 
 if __name__ == '__main__':
-    generated_lengths = [50, 500, 1000, 2500, 5000, 10000]
+    generated_lengths = [50, 500, 1000, 2500, 5000, 7000]
+    # generated_lengths = [50, 100, 200, 300, 500, 750, 1000]
 
     # 5% mutated
     run_test(generated_lengths, 10, "10percent")
