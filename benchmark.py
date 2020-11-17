@@ -52,18 +52,18 @@ from global_alignment_functions import FUNCTION_TEST, get_cost
 
             # TODO: UNCOMMENT FOR MORE ACCURATE DATA
             # sec_time = t.timeit(100000)/100000  # Average time over 100,000 runs
-            sec_time = t.timeit(1) # to test benchmarking is working 
+            sec_time = t.timeit(10) # to test benchmarking is working 
 
             # print(get_memory_use())
             # mem_before = get_memory_use()
             # test_run(TEST_CODE)
             # mem_usage = memory_usage(test_run(TEST_CODE), interval=.05, timeout=(sec_time*1.2 + 1))
-            print("in")
+            # print("in")
             if func_name == "dp":
                 mem_usage = memory_usage((dp, (str1[-1], str2[-1], get_cost)))
             else:
                 mem_usage = memory_usage((hirschberg, (str1[-1], str2[-1], get_cost)))
-            print("out")
+            # print("out")
             net_mem_use = max(mem_usage) 
             # - mem_before
             # net_mem_use = get_memory_use() - mem_before
