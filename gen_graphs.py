@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # benchmark.test_func_data("./test_strings/real_comp", "hirschberg")
 
     # test generated data dp
-    filenames = ["./test_strings/artificial_comp/10percent","./test_strings/artificial_comp/50percent","./test_strings/artificial_comp/90percent"]
+    filenames = ["./test_strings/artificial_comp/10percent", "./test_strings/artificial_comp/25percent", "./test_strings/artificial_comp/50percent","./test_strings/artificial_comp/90percent"]
     
     for f_name in filenames:
         # GATHERING DATA
