@@ -34,7 +34,7 @@ Test a function based on real data comparisons in "./test_strings/real_comp".
     @func_name = string name of Global Alignment function to test
     Output is "filename: runtime (secs)"
 '''
-def test_func_data(DATAPATH, func_name, iters=10):
+def test_func_data(DATAPATH, func_name, iters=10, runtime=True. mem=True):
     data = {}
 
     for filename in glob.glob(os.path.join(DATAPATH, '*.txt')):
@@ -43,8 +43,14 @@ def test_func_data(DATAPATH, func_name, iters=10):
             str2 = f.readline()[:-1]
             length_bp = max(len(str1), len(str2))
             
-            runtime = avg_time_benchmark(iters, str1, str2, func_name)
-            mem_use = avg_mem_benchmark(iters, str1, str2, func_name)
+            if runtime:
+                runtime = avg_time_benchmark(iters, str1, str2, func_name)
+            else:
+                runtime = None
+            if mem:
+                mem_use = avg_mem_benchmark(iters, str1, str2, func_name)
+            else:
+                mem_use = None
 
             data[os.path.basename(filename)] = {"runtime": runtime,
                                                 "mem_use": mem_use,
