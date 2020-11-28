@@ -11,7 +11,7 @@ def data_dict_to_pd_data(data_dict):
     mem_use = []
     runtime = []
     length = []
-    for _, value in data_dict.iteritems():
+    for _, value in data_dict.items():
         mem_use.append(value["mem_use"])
         runtime.append(value["runtime"])
         length.append(value["length"])
