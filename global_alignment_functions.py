@@ -5,7 +5,7 @@ output the alignment for x and y and the score.
 
 Three types:
     DP learned in class
-    Hirschberg’s Algorithm
+    Hirschberg s Algorithm
     Method of Three Russians
 
 """

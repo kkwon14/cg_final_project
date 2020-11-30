@@ -1,0 +1,4 @@
+﻿FILENAME,STR1,STR2,LENGTH1,LENGTH2,Positives %
+DIF I-like C-like H Sapien,C-like M musculus,I-like H Sapien,748,605,46.9
+DIF I-like C-like P Hamadryas,C-like M musculus,I-like P Hamadryas,748,605,47.4
+SIM I-Like,I-like H Sapien,I-like P Hamadryas,605,605,99.7
