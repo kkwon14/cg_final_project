@@ -27,6 +27,7 @@ def avg_time_benchmark(iters, a, b, alignment):
     stmt = f'{alignment}("{a}", "{b}", get_cost)'
     t = timeit.Timer(setup=setup, stmt=stmt)
     sec_time = t.timeit(iters) / iters
+    return sec_time
 
 '''
 Test a function based on real data comparisons in "./test_strings/real_comp".
@@ -34,7 +35,7 @@ Test a function based on real data comparisons in "./test_strings/real_comp".
     @func_name = string name of Global Alignment function to test
     Output is "filename: runtime (secs)"
 '''
-def test_func_data(DATAPATH, func_name, iters=10, runtime=True. mem=True):
+def test_func_data(DATAPATH, func_name, iters=10):
     data = {}
 
     for filename in glob.glob(os.path.join(DATAPATH, '*.txt')):
@@ -43,24 +44,24 @@ def test_func_data(DATAPATH, func_name, iters=10, runtime=True. mem=True):
             str2 = f.readline()[:-1]
             length_bp = max(len(str1), len(str2))
             
-            if runtime:
-                runtime = avg_time_benchmark(iters, str1, str2, func_name)
-            else:
-                runtime = None
-            if mem:
-                mem_use = avg_mem_benchmark(iters, str1, str2, func_name)
-            else:
-                mem_use = None
+            runtime = avg_time_benchmark(iters, str1, str2, func_name)
+            mem_use = avg_mem_benchmark(iters, str1, str2, func_name)
 
             data[os.path.basename(filename)] = {"runtime": runtime,
                                                 "mem_use": mem_use,
                                                 "length": length_bp}
     return data
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
+    funcs = ['dp', 'hirschberg']
+    filepath = './test_strings/temp_test/'
+    for func in funcs:
+        print(func)
+        print(test_func_data(filepath, func, iters=1))
 #     # test real data
      #test_func_data("./test_strings/real_comp", "dp")
      #test_func_data("./test_strings/real_comp", "hirschberg")
 
      #test_func_data("./test_strings/artificial_comp/10percent", "dp")
      #test_func_data("./test_strings/artificial_comp/10percent", "hirschberg")
+
