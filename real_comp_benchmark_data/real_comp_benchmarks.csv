@@ -1,0 +1,9 @@
+Main Seq,Comparison Seq,Sim/Dif,Main Seq Length,Alignment Type,Runtime (s),Memory (MB)
+Rtn4,Rtn4,DIF,1163,dp,1.014202899999873,4.90234375
+Rtn4,Rtn4,SIM,1163,dp,2.103433300000688,10.09375
+Rtn4,Rtn4,DIF,1163,hirschberg,0.6481205000000045,0.16015625
+Rtn4,Rtn4,SIM,1163,hirschberg,1.3591981999998097,0.234375
+I like H Sapien,I-like C-like H Sapien,DIF,605,dp,0.7089800000012474,3.39453125
+I like H Sapien,I-Like,SIM,605,dp,0.5626802000006137,2.765625
+I like H Sapien,I-like C-like H Sapien,DIF,605,hirschberg,0.44836970000142173,0.1484375
+I like H Sapien,I-Like,SIM,605,hirschberg,0.36115350000000035,0.08984375
