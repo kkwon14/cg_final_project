@@ -81,6 +81,10 @@ def hirschberg_split(x, y, s):
     return curr_row
 
 def hirschberg(x, y, s):
+    # setting the shorter string as x
+    if (len(y) > len(x)):
+        x, y = y, x
+
     # base case:
     if len(x) <= 1 or len(y) <= 1:
         return dp(x, y, s)
