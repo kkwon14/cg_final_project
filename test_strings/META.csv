@@ -1,4 +1,8 @@
-﻿FILENAME,STR1,STR2,LENGTH1,LENGTH2,Positives %
-DIF I-like C-like H Sapien,C-like M musculus,I-like H Sapien,748,605,46.9
-DIF I-like C-like P Hamadryas,C-like M musculus,I-like P Hamadryas,748,605,47.4
-SIM I-Like,I-like H Sapien,I-like P Hamadryas,605,605,99.7
+﻿FOLDERNAME,FILENAME,STR1,STR2,LENGTH1,LENGTH2,Positives %,,,
+634 H Sapien LAG-2,SIM LAG-2,H Sapiens LAG-2 gene encoding lymphokine LAG-2,Human NKG5 mRNA,634,745,99.5,,,https://www.ebi.ac.uk/Tools/services/web/toolresult.ebi?jobId=fasta-I20201208-133954-0905-67402451-p2m
+1185 H Sapien mRNA 1A1A,SIM 1A1A,Human mRNA for 1-alpha-1-antitrypsin (partial),Transgenic cloned cow producing human Alpha1-antitrypsin andmethod for producing the same.,1185,1257,99.6,,,https://www.ebi.ac.uk/Tools/services/web/toolresult.ebi?jobId=fasta-I20201208-134016-0499-95961003-p1m
+3100 Mullerian inhib,SIM MIS,Mullerian inhibiting substance gene,"Human Mullerian inhibiting substance gene, complete cds.",3100,3100,99.9,,,https://www.ebi.ac.uk/Tools/services/web/toolresult.ebi?jobId=fasta-I20201208-134023-0582-51628188-p1m
+7013 H Sapien mRNA,"SIM mRNA, biomarker","Homo sapiens KIAA0333 mRNA, partial cds.","Biomarker which is antibody in body fluid, for detecting onset risk of brain infarction with high sensitivity.",7013,8592,100,,,https://www.ebi.ac.uk/Tools/services/web/toolresult.ebi?jobId=fasta-I20201208-134033-0926-78966463-p1m
+,"DIF mRNA, mod mRNA","Homo sapiens KIAA0333 mRNA, partial cds.",MODIFIED POLYNUCLEOTIDES FOR THE PRODUCTION OF CYTOPLASMIC AND CYTOSKELETAL PROTEINS,7013,3570,78.6,,,
+10607 H Sapien genes,SIM HSG,H.sapiens factor IX gene,"Homo sapiens mRNA for KIAA0300 gene, partial cds.",10607,11700,,,,https://www.ebi.ac.uk/Tools/services/web/toolresult.ebi?jobId=fasta-I20201208-134045-0310-70024312-p2m
+,,,,,,,,,
