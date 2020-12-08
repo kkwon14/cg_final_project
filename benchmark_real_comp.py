@@ -21,7 +21,7 @@ def run_benchmarks():
             length, main_sec = str(directory.stem).split(maxsplit=1)
             for func in global_alignment_funcs:
                 alignment_type = func
-                result = test_func_data(directory, func, iters=1)
+                result = test_func_data(directory, func)
                 for filename, results in result.items():
                     # remove file extension
                     filename = filename.rsplit('.', 1)[0]
