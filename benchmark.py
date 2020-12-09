@@ -6,6 +6,8 @@ import subprocess
 
 def mem_benchmark(a, b, alignment):
     """Benchmark memory of one run of given alignment."""
+    # If you do not run python using the python3 command, change below line to
+    # the command that you do use.
     out = subprocess.run(['python3', 'mem_benchmark.py', a, b, alignment],
                          capture_output = True,
                          text = True)
