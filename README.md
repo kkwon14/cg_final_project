@@ -24,9 +24,9 @@
   # to run Hirschberg
   hirschberg('<input string 1>', '<input string 2>', get_cost)
   # to do preprocessing for Four Russians
-  create_preprocess_file(<int for t>)
+  create_preprocess_file(<int for block size t>)
   # to run Four Russians (needs preprocessed file - takes ton of memory to generate)
-  four_russians('<input string 1>', '<input string 2>')
+  four_russians('<input string 1>', '<input string 2>', '<int for block size t>')
   ```
   To run benchmarks,
   ```
